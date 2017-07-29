@@ -1,4 +1,7 @@
 <?php
+if (session_status() == PHP_SESSION_NONE){
+session_start();
+}
 include ('index.php');
 
 $stmt = $conn->prepare('select * from test where username = :username');
