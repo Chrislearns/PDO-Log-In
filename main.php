@@ -21,6 +21,20 @@ if(session_status() == PHP_SESSION_NONE){
  <input type="password" name="password" /><br>
  <input type="submit" value="Sign Up"/>
  </form>
+ <form action="test.php" method="post">
+   <div class="input-spacing">
+    <h3> Days Off(check all applicable boxes):</h3><br>
+  <input type="checkbox" name="daysOff[]" value="Saturday" > Saturday
+  <input type="checkbox" name="daysOff[]" value="Sunday" > Sunday
+  <input type="checkbox" name="daysOff[]" value="Monday" > Monday
+  <input type="checkbox" name="daysOff[]" value="Tuesday" > Tuesday
+  <input type="checkbox" name="daysOff[]" value="Wednesday" > Wednesday
+  <input type="checkbox" name="daysOff[]" value="Thursday" > Thursday
+  <input type="checkbox" name="daysOff[]" value="Friday" > Friday
+  <br>
+  <input type="submit" value="Sign Up"/>
+  </div>
+</form>
  <br>
  <br>
  <?php
