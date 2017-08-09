@@ -43,6 +43,12 @@ if(session_status() == PHP_SESSION_NONE){
              echo "<h1>$success</h1>";
                       }
         ?>
+ <?php
+              if(isset($_SESSION["empty"])) {
+            $empty = $_SESSION["empty"];
+             echo "<h1>$empty</h1>";
+                      }
+        ?>
  <form action="signin.php" method="POST">
  <label>Username</label>
  <input type="text" name="username" /><br>

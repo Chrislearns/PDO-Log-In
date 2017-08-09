@@ -10,6 +10,7 @@ $hash = password_hash($pass,  PASSWORD_DEFAULT);
 $stmt = $conn->prepare('select * from test where username = :email');
 $stmt->bindParam(':email', $user);
 $stmt->execute();
+//Update on verifying user password
 $results = $stmt->fetch(PDO::FETCH_ASSOC);
 $dbpassword = $results['PASSWORD'];
 //Verify user password and number of rows affected

@@ -4,9 +4,15 @@ if(session_status() == PHP_SESSION_NONE){
 }
 include ('index.php');
 
+
+
+
+/*
 //Working with checkbox Arrays
 $daysOff = $_POST['daysOff'];
-
+if(empty($daysOff)) {
+  $_SESSION["empty"]= "<h1>Everything checks out</h1>";
+}
 $firstdayOff = htmlentities(trim($daysOff[0]),ENT_QUOTES, "UTF-8");
 $secondDayOff = htmlentities(trim($daysOff[1]),ENT_QUOTES, "UTF-8");
 
@@ -17,13 +23,14 @@ $stmt->execute();
 
 $counter= $stmt->rowCount();
 if($counter == 1){
-  $_SESSION["success"] "<h1>You're a Badass</h1>";
+  $_SESSION["success"] = "<h1>You're a Badass</h1>";
   header("location:main.php");
   $conn = null;
   exit;
 }
+*/
 
-
+/*
 $user = htmlentities(trim($_POST['username']), ENT_QUOTES, "UTF-8");
 $pass = htmlentities(trim($_POST['password']), ENT_QUOTES, "UTF-8");
 $hash = password_hash($pass, PASSWORD_DEFAULT);
@@ -42,3 +49,4 @@ if($count == 1){
 
 
 }
+*/
