@@ -2,7 +2,7 @@
 if(session_status() == PHP_SESSION_NONE){
   session_start();
 }
-include ('index.php');
+include ('connection.php');
 $user = htmlentities(trim($_POST['username']), ENT_QUOTES, "UTF-8");
 $pass = htmlentities(trim($_POST['password']), ENT_QUOTES, "UTF-8");
 $hash = password_hash($pass,  PASSWORD_DEFAULT);

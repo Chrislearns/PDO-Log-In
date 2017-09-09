@@ -2,13 +2,13 @@
 if(session_status() == PHP_SESSION_NONE){
   session_start();
 }
-include ('index.php');
+include ('connection.php');
 
 
-
+//Working with checkbox Arrays
 
 /*
-//Working with checkbox Arrays
+
 $daysOff = $_POST['daysOff'];
 if(empty($daysOff)) {
   $_SESSION["empty"]= "<h1>Everything checks out</h1>";

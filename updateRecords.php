@@ -1,5 +1,5 @@
 <?php
-include ('index.php');
+include ('connection.php');
 
 //$stmt = $conn->prepare('delete from test where username = :username');
 $stmt= $conn->prepare('update test set password = :password where username = :username');
