@@ -2,27 +2,8 @@
 if(session_status() == PHP_SESSION_NONE) {
   session_start();
 }
-/*
-
-// Fill in values and reload page to insert values into database.
-//  Remember to remove comment tags LOL.
-
-include_once ('connection.php');
 
 
-$username = 'your-user-name';
-$password = 'your-password';
-//Hash your password in order to verify it with password_verify
-$hash = password_hash($password,  PASSWORD_DEFAULT)
-
-$stmt = $conn->prepare("INSERT INTO your-table-name(username, password)
-    VALUES(?, ?)");
-
-$stmt->execute(array( $username, $hash
-));
-$conn= null;
-exit;
-*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -96,5 +77,35 @@ exit;
   <br>
   <br> -->
 </body>
+
+<?php
+/*
+// Fill in values and reload page to insert values into database.
+//  Remember to remove comment tags LOL.
+//   After initial use this section should be deleted so you won't run this query more then once.
+
+include_once ('connection.php');
+
+
+$username = 'your-username';
+$password = 'your-password';
+//Hash your password in order to verify it with password_verify
+$hashedPassword = password_hash($password,  PASSWORD_DEFAULT);
+
+$stmt = $conn->prepare("INSERT INTO your-table-name (username, password) VALUES(?, ?)");
+
+$stmt->execute(
+
+      array(
+
+          $username,
+          $hashedPassword
+
+        ));
+
+$conn= null;
+exit;
+ */
+ ?>
 
 </html>
