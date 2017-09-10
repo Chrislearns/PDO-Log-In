@@ -1,6 +1,6 @@
 <?php
 try{
-$conn = new PDO('mysql:host=localhost;dbname=verify;charset=utf8;','phpmyadmin','');
+$conn = new PDO('mysql:host=localhost;dbname=verifypassword;charset=utf8;','phpmyadmin','');
 }
 
 catch(Exception $e) {

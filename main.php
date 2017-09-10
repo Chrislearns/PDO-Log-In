@@ -2,38 +2,69 @@
 if(session_status() == PHP_SESSION_NONE) {
   session_start();
 }
+/*
+
+// Fill in values and reload page to insert values into database.
+//  Remember to remove comment tags LOL.
+
+include_once ('connection.php');
+
+
+$username = 'your-user-name';
+$password = 'your-password';
+//Hash your password in order to verify it with password_verify
+$hash = password_hash($password,  PASSWORD_DEFAULT)
+
+$stmt = $conn->prepare("INSERT INTO your-table-name(username, password)
+    VALUES(?, ?)");
+
+$stmt->execute(array( $username, $hash
+));
+$conn= null;
+exit;
+*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
  <meta charset="UTF-8">
-
+<link rel="stylesheet" href="master.css">
 </head>
 <body>
-<?php
-      if (isset($_SESSION["success"]))
 
-      {
-          $success = $_SESSION["success"];
-          echo "<h1>$success</h1>";
-      }
-?>
-<?php
-      if (isset($_SESSION["empty"]))
+<div class="user">
+    <header class="user__header">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
+        <h1 class="user__title">How to verify Password using PHP</h1>
+    </header>
+    <?php
+          if (isset($_SESSION["success"]))
 
-      {
-          $empty = $_SESSION["empty"];
-          echo "<h1>$empty</h1>";
-      }
-?>
- <form action="verifypassword.php" method="POST">
- <label>Username</label>
- <input type="text" name="username" /><br>
- <label>Password</label>
- <input type="password" name="password" /><br>
- <input type="submit" value="Sign In"/>
- </form>
+          {
+              $success = $_SESSION["success"];
+              echo "<h1>$success</h1>";
+          }
 
+          if (isset($_SESSION["error"]))
+
+          {
+              $error = $_SESSION["error"];
+              echo "<h1>$error</h1>";
+          }
+    ?>
+    <form class="form" method="post" action="verifypassword.php">
+        <div class="form__group">
+            <input type="text" placeholder="Username" name="username" class="form__input" />
+        </div>
+
+        <div class="form__group">
+            <input type="password" placeholder="Password" name="password" class="form__input" />
+        </div>
+
+        <button class="btn" type="submit">Register</button>
+    </form>
+    <h4 id="joe" >UI credit <a href="https://codepen.io/dope/">Joe</a></h4>
+</div>
 
 
  <!-- For lesson on working with CheckBox Arrays
