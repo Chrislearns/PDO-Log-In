@@ -5,13 +5,13 @@ if(session_status() == PHP_SESSION_NONE){
 include_once ('connection.php');
 
 /*.....Never Trust User Input....Get used to security checking........*/
-$user = htmlentities(trim($_POST['username']), ENT_QUOTES, "UTF-8");
-$pass = htmlentities(trim($_POST['password']), ENT_QUOTES, "UTF-8");
+$username = htmlentities(trim($_POST['username']), ENT_QUOTES, "UTF-8");
+$password = htmlentities(trim($_POST['password']), ENT_QUOTES, "UTF-8");
 
 
 /*..........Check if user and password combination exist...........*/
-$stmt = $conn->prepare('select * from test where username = :email');
-$stmt->bindParam(':email', $user);
+$stmt = $conn->prepare('select * from your-table-name-here where username = :username');
+$stmt->bindParam(':username', $username);
 
 $stmt->execute();
 
@@ -20,7 +20,7 @@ $results = $stmt->fetch(PDO::FETCH_ASSOC);
 $dbpassword = $results['PASSWORD'];
 
 //Verify user password and number of rows affected
-$verify = password_verify($pass, $dbpassword);
+$verify = password_verify($password, $dbpassword);
 
 /*.........Make sure theres only one result in your Database..............*/
 $count = $stmt->rowCount();

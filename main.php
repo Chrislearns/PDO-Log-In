@@ -87,12 +87,12 @@ if(session_status() == PHP_SESSION_NONE) {
 include_once ('connection.php');
 
 
-$username = 'your-username';
-$password = 'your-password';
+$username = 'drainc3';
+$password = 'chrisdrain';
 //Hash your password in order to verify it with password_verify
 $hashedPassword = password_hash($password,  PASSWORD_DEFAULT);
 
-$stmt = $conn->prepare("INSERT INTO your-table-name (username, password) VALUES(?, ?)");
+$stmt = $conn->prepare("INSERT INTO verify (username, password) VALUES(?, ?)");
 
 $stmt->execute(
 
@@ -105,7 +105,7 @@ $stmt->execute(
 
 $conn= null;
 exit;
- */
+*/
  ?>
 
 </html>
