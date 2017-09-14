@@ -37,6 +37,7 @@ if ($count == 1 && $verify) {
 else {
   /*.........Error checking just in case.......*/
   $_SESSION["error"] = "We have a problem.";
+  header('location:main.php');
   $conn = null;
   exit;
 
